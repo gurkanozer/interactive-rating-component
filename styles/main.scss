@@ -1,0 +1,182 @@
+@import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@300;400&family=Overpass:wght@400;700&display=swap");
+
+$color-white: rgb(255, 255, 255);
+$color-orange: rgb(251, 116, 19);
+$color-light-grey: rgb(149, 158, 172);
+$color-medium-grey: rgb(124, 135, 152);
+$color-dark-blue: rgb(37, 45, 55);
+$color-very-dark-blue: rgb(18, 20, 23);
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  font-family: "Overpass", sans-serif;
+  background-color: $color-very-dark-blue;
+}
+button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+main {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card {
+  max-width: 414px;
+  height: 100%;
+  background-image: radial-gradient(at top, $color-dark-blue, $color-very-dark-blue);
+  padding: 32px 34px;
+  border-radius: 24px;
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  &__star {
+    width: 48px;
+    height: 48px;
+    border-radius: 100%;
+    background: url("../images/icon-star.svg") no-repeat center center;
+    background-color: $color-dark-blue;
+    background-size: 40%;
+    margin-bottom: 32px;
+  }
+  &__title {
+    color: $color-white;
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+  &__text {
+    color: $color-medium-grey;
+    font-size: 15px;
+    line-height: 24px;
+    margin-bottom: 30px;
+  }
+  &__button-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    @media (max-width: 339px) {
+      justify-content: flex-start;
+    }
+  }
+  &__radio {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    width: 52px;
+    height: 52px;
+    text-align: center;
+    line-height: 52px;
+    color: $color-medium-grey;
+    z-index: 1;
+    transition: all 0.3s;
+    input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+    }
+    &-checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 52px;
+      width: 52px;
+      border-radius: 50%;
+      background: $color-dark-blue;
+      transition: all 0.4s;
+      z-index: -1;
+    }
+    &:hover {
+      color: $color-white;
+      .card__radio-checkmark {
+        transition: all 0.4s;
+        background: $color-orange;
+      }
+    }
+    
+    input:checked ~ .card__radio-checkmark{
+      background: $color-medium-grey;
+      color: $color-white;
+    }
+  }
+
+  
+  &__submit-btn {
+    width: 100%;
+    text-transform: uppercase;
+    color: $color-white;
+    background-color: $color-orange;
+    padding: 14px;
+    border-radius: 46px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    &::before{
+        transition: 0.4s all ease;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        right: 50%;
+        bottom: 0;
+        opacity: 0;
+        content: "";
+        background-color: $color-white;
+    }
+    &.active{
+      &::before{
+        animation: scaleout .4s 1 ease-out;
+      }
+    }
+  }
+  &--centered {
+    align-items: center;
+  }
+  &__img {
+    max-height: 120px;
+    margin-bottom: 32px;
+  }
+  &__badge {
+    background: $color-dark-blue;
+    border-radius: 32px;
+    color: $color-orange;
+    line-height: 32px;
+    padding: 0 20px;
+    font-size: 15px;
+    letter-spacing: 1px;
+    margin-bottom: 32px;
+    opacity: 0.7;
+  }
+  &.active{
+    display:flex;
+  }
+}
+
+.text {
+  &--centered {
+    text-align: center;
+  }
+}
+@keyframes scaleout {
+  0% {
+    opacity: 1;
+
+  }
+  100% {
+    opacity: 0;
+    left: -20%;
+    right: -20%;  
+}
+}

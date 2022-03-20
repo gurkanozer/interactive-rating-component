@@ -1,0 +1,238 @@
+@import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@300;400&family=Overpass:wght@400;700&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  font-family: "Overpass", sans-serif;
+  background-color: #121417;
+}
+
+button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.card {
+  max-width: 414px;
+  height: 100%;
+  background-image: radial-gradient(at top, #252d37, #121417);
+  padding: 32px 34px;
+  border-radius: 24px;
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.card__star {
+  width: 48px;
+  height: 48px;
+  border-radius: 100%;
+  background: url("../images/icon-star.svg") no-repeat center center;
+  background-color: #252d37;
+  background-size: 40%;
+  margin-bottom: 32px;
+}
+
+.card__title {
+  color: white;
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+.card__text {
+  color: #7c8798;
+  font-size: 15px;
+  line-height: 24px;
+  margin-bottom: 30px;
+}
+
+.card__button-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  margin-bottom: 30px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+@media (max-width: 339px) {
+  .card__button-group {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+}
+
+.card__radio {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  width: 52px;
+  height: 52px;
+  text-align: center;
+  line-height: 52px;
+  color: #7c8798;
+  z-index: 1;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.card__radio input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.card__radio-checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 52px;
+  width: 52px;
+  border-radius: 50%;
+  background: #252d37;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  z-index: -1;
+}
+
+.card__radio:hover {
+  color: white;
+}
+
+.card__radio:hover .card__radio-checkmark {
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  background: #fb7413;
+}
+
+.card__radio input:checked ~ .card__radio-checkmark {
+  background: #7c8798;
+  color: white;
+}
+
+.card__submit-btn {
+  width: 100%;
+  text-transform: uppercase;
+  color: white;
+  background-color: #fb7413;
+  padding: 14px;
+  border-radius: 46px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.card__submit-btn::before {
+  -webkit-transition: 0.4s all ease;
+  transition: 0.4s all ease;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  opacity: 0;
+  content: "";
+  background-color: white;
+}
+
+.card__submit-btn.active::before {
+  -webkit-animation: scaleout .4s 1 ease-out;
+          animation: scaleout .4s 1 ease-out;
+}
+
+.card--centered {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.card__img {
+  max-height: 120px;
+  margin-bottom: 32px;
+}
+
+.card__badge {
+  background: #252d37;
+  border-radius: 32px;
+  color: #fb7413;
+  line-height: 32px;
+  padding: 0 20px;
+  font-size: 15px;
+  letter-spacing: 1px;
+  margin-bottom: 32px;
+  opacity: 0.7;
+}
+
+.card.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.text--centered {
+  text-align: center;
+}
+
+@-webkit-keyframes scaleout {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    left: -20%;
+    right: -20%;
+  }
+}
+
+@keyframes scaleout {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    left: -20%;
+    right: -20%;
+  }
+}
+/*# sourceMappingURL=main.css.map */

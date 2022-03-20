@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./styles/main.css">
+  <title>Frontend Mentor | Interactive rating component</title>
+
+</head>
+<body>
+  <main>
+    <div class="card card__rating active">
+      <div class="card__star"></div>
+      <h2 class="card__title">How did we do?</h2>
+      <p class="card__text">Please let us know how we did with your support request. All feedback is appreciated 
+        to help us improve our offering!</p>
+        <div class="card__button-group">
+          <label class="card__radio">
+            <input type="radio" name="rating" value="1"/>
+            <span class="card__radio-checkmark">1</span>
+          </label>
+          
+          <label class="card__radio">
+            <input type="radio" name="rating" value="2"/>
+            <span class="card__radio-checkmark">2</span>
+          </label>
+          
+          <label class="card__radio">
+            <input type="radio" name="rating" value="3"/>
+            <span class="card__radio-checkmark">3</span>
+          </label>
+          
+          <label class="card__radio">
+            <input type="radio" name="rating" value="4"/>
+            <span class="card__radio-checkmark">4</span>
+          </label>
+          
+          <label class="card__radio">
+            <input type="radio" name="rating" value="5"/>
+            <span class="card__radio-checkmark">5</span>
+          </label>
+        </div>
+        <button class="card__submit-btn">submit</button>
+    </div>
+    <div class="card card--centered card__thank-you">
+      <img src="./images/illustration-thank-you.svg" alt="" class="card__img">
+      <span class="card__badge"></span>
+      <h2 class="card__title">Thank you!</h2>
+      <p class="card__text text--centered">We appreciate you taking the time to give a rating. If you ever need more support, 
+        don’t hesitate to get in touch!</p>
+    </div>
+  </main>
+<script src="./app.js"></script>
+
+</body>
+</html>

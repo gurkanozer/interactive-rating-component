@@ -31,13 +31,14 @@ main {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  padding: 24px;
 }
 
 .card {
   max-width: 414px;
   height: 100%;
   background-image: radial-gradient(at top, #252d37, #121417);
-  padding: 32px 34px;
+  padding: 24px;
   border-radius: 24px;
   display: none;
   -webkit-box-orient: vertical;
@@ -50,6 +51,12 @@ main {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+@media (min-width: 540px) {
+  .card {
+    padding: 32px 34px;
+  }
 }
 
 .card__star {
